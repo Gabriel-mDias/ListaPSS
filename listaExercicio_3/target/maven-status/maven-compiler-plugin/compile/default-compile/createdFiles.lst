@@ -1,0 +1,8 @@
+br/ufes/main/Principal.class
+br/ufes/Composite/Componente.class
+br/ufes/Composite/Memoria.class
+br/ufes/Composite/PlacaMae.class
+br/ufes/Composite/PlacaVideo.class
+br/ufes/Composite/Processador.class
+br/ufes/Composite/ComponenteComposto.class
+br/ufes/Composite/Computador.class
