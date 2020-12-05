@@ -11,6 +11,7 @@ package br.ufes.regraNegocio1;
  */
 public class FacebookCensura extends ICensura{
 
+    
     public FacebookCensura() {
         this.setProibida("Facebook");
     }

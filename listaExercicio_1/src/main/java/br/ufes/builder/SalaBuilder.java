@@ -5,8 +5,8 @@
  */
 package br.ufes.builder;
 
-import br.ufes.proxy.ProxyBloquearMensagem;
-import br.ufes.proxy.ProxyCensurarMensagem;
+import br.ufes.chat.SalaChat;
+import br.ufes.proxy.ProxyGenerico;
 
 /**
  *
@@ -14,9 +14,25 @@ import br.ufes.proxy.ProxyCensurarMensagem;
  */
 public abstract class SalaBuilder {
     
-    private SalaChat sala;
+    private ProxyGenerico proxy;
     
     public abstract void createSalaChat();
+
+    public SalaChat getSala() {
+        return this.proxy.getSala();
+    }
+
+    public void setSala(SalaChat sala) {
+        this.proxy.setSala(sala);
+    }
+
+    public ProxyGenerico getProxy() {
+        return proxy;
+    }
+
+    public void setProxy(ProxyGenerico proxy) {
+        this.proxy = proxy;
+    }
     
-    public abstract void enviar(String mensagem, ProxyCensurarMensagem proxyC, ProxyBloquearMensagem proxyB);
+    
 }

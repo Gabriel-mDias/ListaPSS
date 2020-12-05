@@ -5,23 +5,31 @@
  */
 package br.ufes.proxy;
 
+import br.ufes.chat.Participante;
+import br.ufes.chat.SalaChat;
 import br.ufes.regraNegocio2.ControladorBloqueio;
 
 /**
  *
  * @author gabriel
  */
-public class ProxyBloquearMensagem implements BloquearMensagem{
+public class ProxyBloquearMensagem extends ProxyGenerico{
     
     private ControladorBloqueio controler;
+    private SalaChat sala;
     
     public ProxyBloquearMensagem(){
         controler = new ControladorBloqueio();
     }
 
     @Override
-    public String bloquearMensagem(String mensagem) {
-        return controler.bloquearMensagem(mensagem);
+    public String validarMensagem(String mensagem) {
+        return controler.validarMensagem(mensagem);
+    }
+    
+    @Override
+    public void enviar(String mensagem, Participante p){
+        this.getSala().enviar(this.validarMensagem(mensagem), p);
     }
     
 }

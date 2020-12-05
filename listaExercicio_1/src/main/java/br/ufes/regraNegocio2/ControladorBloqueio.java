@@ -5,13 +5,13 @@
  */
 package br.ufes.regraNegocio2;
 
-import br.ufes.proxy.BloquearMensagem;
+import br.ufes.proxy.ProxyMensagem;
 
 /**
  *
  * @author gabriel
  */
-public class ControladorBloqueio implements BloquearMensagem{
+public class ControladorBloqueio implements ProxyMensagem{
     
     public MensagemHandler primeiro;
     
@@ -20,7 +20,7 @@ public class ControladorBloqueio implements BloquearMensagem{
     }
 
     @Override
-    public String bloquearMensagem(String mensagem) {
+    public String validarMensagem(String mensagem) {
         return primeiro.verificarTag(mensagem);
     }
     
